@@ -1,3 +1,26 @@
+body {
+    background-color: beige;
+}
+
+header {
+    background-color: lightsteelblue;
+}
+
+footer {
+    color: white;
+    background-color: darkolivegreen;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    color:darkolivegreen;
+}
+
+h2 {
+    color:darkslategray;
+    margin: 0;
+}
+
 .choice {
     cursor: pointer;
 }
@@ -8,15 +31,31 @@
 }
 
 .choice img:hover {
-    background-color: lightblue;
+    background-color: lightsteelblue;
 }
 
 .choice img:active {
-    background-color: lightyellow 
+    background-color:darkolivegreen;
+    color: white;
 }
 
 #scoreboard, #scoreHistory {
     width: 700px;
+}
+
+#scoreHistory h4,
+#scoreHistory .dash {
+    font-weight: 200;
+}
+
+#playerBoxScore {
+    margin-left: 40px;
+    color:darkslategray;
+}
+
+#computerBoxScore {
+    margin-right: 40px;
+    color: darkslategray;
 }
 
 .player {
@@ -41,25 +80,15 @@
     font-weight: 200;
 }
 
-#scoreHistory h4,
-#scoreHistory .dash {
-    font-weight: 200;
-}
-
-#playerBoxScore {
-    margin-left: 40px;
-}
-
-#computerBoxScore {
-    margin-right: 40px;
-}
-
 ul {
     list-style: none;
 }
 
 li {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 200;
 }
 
+.modal-footer {
+    background-color: lightgray;
+}
