@@ -1,0 +1,65 @@
+.choice {
+    cursor: pointer;
+}
+
+.choice img {
+    background-color: lightgray;
+    border-radius: 12px;
+}
+
+.choice img:hover {
+    background-color: lightblue;
+}
+
+.choice img:active {
+    background-color: lightyellow 
+}
+
+#scoreboard, #scoreHistory {
+    width: 700px;
+}
+
+.player {
+    width: 300px;
+}
+
+.computer {
+    width: 300px;
+}
+
+.player span {
+    display: inline-block;
+    margin-left: 60px;
+    color: gray;
+    font-weight: 200;
+}
+
+.computer span {
+    display: inline-block;
+    margin-right: 60px;
+    color: gray;
+    font-weight: 200;
+}
+
+#scoreHistory h4,
+#scoreHistory .dash {
+    font-weight: 200;
+}
+
+#playerBoxScore {
+    margin-left: 40px;
+}
+
+#computerBoxScore {
+    margin-right: 40px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
