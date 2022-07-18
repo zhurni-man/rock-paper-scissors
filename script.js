@@ -54,6 +54,7 @@ function updateGameData(playerChoice, computerChoice, result) {
         updateComputerHistory(computerChoice, result);
     }
 
+    // Check if game is over
     if (roundCount == roundLimit) {
         isGameOver = true;
         if (playerScore > computerScore) {
@@ -63,7 +64,7 @@ function updateGameData(playerChoice, computerChoice, result) {
             gameResultMessage = 'You Lost!';
             gameResultImageSrc = './images/sad.png';
         }
-        // Set up game result modal
+        // Set up and open game result modal
         const imgElement = document.createElement('img');
         imgElement.setAttribute('src', gameResultImageSrc);
         imgElement.setAttribute('width', '200');
@@ -76,7 +77,7 @@ function updateGameData(playerChoice, computerChoice, result) {
     }
 }
 
-// Close game modal
+// Close game result modal
 function closeModal() {
     modalBackdrop.style.display = 'none';
     gameModal.style.display = 'none';
@@ -117,29 +118,20 @@ function computerPlay() {
 
 // Start a single round
 function singleRound(playerSelection) {
+    // Computer select
     let computerChoice = computerPlay();
-    switch(true) {
-        case ( playerSelection === computerChoice ):
-            updateGameData(playerSelection, computerChoice, 'tie');
-            break;
-        case ( (playerSelection === 'rock') && (computerChoice === 'scissors') ):
-            updateGameData(playerSelection, computerChoice, 'win');
-            break;
-        case ( (playerSelection === 'rock') && (computerChoice === 'paper') ):
-            updateGameData(playerSelection, computerChoice, 'lose');
-            break;
-        case ( (playerSelection === 'paper') && (computerChoice === 'rock') ):
-            updateGameData(playerSelection, computerChoice, 'win');
-            break;
-        case ( (playerSelection === 'paper') && (computerChoice === 'scissors') ):
-            updateGameData(playerSelection, computerChoice, 'lose');
-            break;
-        case ( (playerSelection === 'scissors') && (computerChoice === 'paper') ):
-            updateGameData(playerSelection, computerChoice, 'win');
-            break;
-        case ( (playerSelection === 'scissors') && (computerChoice === 'rock') ):
-            updateGameData(playerSelection, computerChoice, 'lose');
-            break;
+
+    // Possible outcomes
+    if ( playerSelection === computerChoice ) {
+                updateGameData(playerSelection, computerChoice, 'tie');
+    } else if ( ((playerSelection === 'rock') && (computerChoice === 'scissors')) ||
+                ((playerSelection === 'paper') && (computerChoice === 'rock')) ||
+                ((playerSelection === 'scissors') && (computerChoice === 'paper')) ) {
+                    updateGameData(playerSelection, computerChoice, 'win');
+    } else if ( ((playerSelection === 'rock') && (computerChoice === 'paper')) ||
+                ((playerSelection === 'paper') && (computerChoice === 'scissors')) ||
+                ((playerSelection === 'scissors') && (computerChoice === 'rock')) ) {
+                    updateGameData(playerSelection, computerChoice, 'lose');
     }
 }
 
